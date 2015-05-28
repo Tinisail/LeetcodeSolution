@@ -38,8 +38,12 @@ ListNode * Solution::removeElements(ListNode* head, int val)
 			{
 				former = pNode;
 				pNode = pNode->next;
+				if (pNode == NULL)
+				{
+					break;
+				}
 			}
-
+			
 			if (pNode->val == val)
 			{
 				former->next = pNode->next;
@@ -106,7 +110,11 @@ int main()
 
 	cout << "--------Between---------" << endl;
 
-	ListNode *  p = solution.removeElements(solution.GetHead(), 1);
+	ListNode *  p = solution.removeElements(solution.GetHead(), 2);
+	solution.DisPlayNode(p);
+	p = solution.removeElements(solution.GetHead(), 3);
+	solution.DisPlayNode(p);
+	p = solution.removeElements(solution.GetHead(), 2);
 	solution.DisPlayNode(p);
 	//	system("pause");
 	return 0;
